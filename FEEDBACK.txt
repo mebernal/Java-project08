@@ -1,0 +1,74 @@
+FEEDBACK:
+
+Good use of HeapTuple in class heapArrayMerger.
+
+
+-1 Do *not* change method signatures. 
+   This includes  order of arguments, handling of exceptions, etc.
+	Otherwise it results in errors.
+    See sample compilation error below:
+The method mergeSortedArrays(ArrayList<Integer[]>, HeapTuple[], String, boolean) in the type 
+heapArrayMerger is not applicable for the arguments (int, ArrayList<Integer[]>, HeapTuple[], String, boolean)
+
+
+-1 Missing implementation of getHeapsUsed() as required by test file.
+   Missing required implementation results in my not being 
+   able to accurately give you credit for what you did implement.
+
+
+-1 Invalid min heap does not meet ordering requirements. See sample 1 below.
+   
+   
+-1 class SortFileData and method heapSortAndMerge results in 
+   ArrayIndexOutOfBoundsException on test case with four input files and MEM_SIZE of 8
+   and two input files and MEM_SIZE 128. 
+   See sample output 2 below.
+   
+   
+-Bita.
+
+
+sample 1:
+Invalid Min Heap!  arr[3] = 44000 is not <= it's left child arr[7] = 47 & right child arr[8] = 80
+
+
+
+sample output 2:
+testing with 2 number of input files:
+numbers04.txt, numbers_v06.txt, 
+MEM_SIZE = 128
+----------------------------------------------------------------------------
+Number of arrays holding file input = 4
+file chunk[0] with size 0 :
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+file chunk[1] with size 128 :
+----------------------------------------------------------------------
+1499,1740,1402,196,259,1855,1658,1804,313,1746,1749,588,532,744,1936,294,
+1591,1057,244,336,497,1710,1709,402,1837,1421,1587,1372,1762,1215,298,1739,
+1292,1576,1872,388,1504,738,48,1074,379,395,777,1220,1643,515,879,1771,
+1833,220,1867,1743,961,775,1533,852,671,1601,1799,125,1589,923,1553,1779,
+663,1185,1704,1790,1758,1677,529,1568,476,960,555,950,1253,1613,1649,1317,
+1155,1601,795,1047,455,112,1106,1779,1094,1129,1023,961,413,1165,1382,46,
+1177,618,1018,337,1839,1034,963,1979,1235,1170,899,1884,1454,1233,1517,
+1464,1505,897,708,992,587,806,76,102,1232,1120,1202,1519,1455,386,259,1434,
+...
+
+Phase 1 : Sorted file chunks 2:
+sort file chunk[2] with size 128:
+----------------------------------------------------------------------
+46,48,76,102,112,125,196,220,244,259,259,294,298,313,336,337,379,386,388,
+395,402,413,455,476,497,515,529,532,555,587,588,618,663,671,708,738,744,
+775,777,795,806,852,879,897,899,923,950,960,961,961,963,992,1018,1023,1034,
+1047,1057,1074,1094,1094,1106,1120,1129,1155,1165,1170,1177,1185,1202,1215,
+1220,1232,1233,1235,1253,1292,1317,1372,1382,1402,1421,1434,1454,1455,1464,
+1504,1505,1517,1519,1533,1553,1568,1576,1587,1589,1591,1601,1601,1613,1643,
+1649,1658,1677,1704,1709,1710,1739,1740,1743,1746,1749,1758,1762,1771,1779,
+1779,1790,1799,1804,1833,1837,1839,1855,1867,1872,1884,1936,1979,
+----------------------------------------------------------------------
+
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
+	at sorters.heapArrayMerger.heapSortAndMerge(heapArrayMerger.java:89)
+	at sorters.heapArrayMerger.mergeSortedArrays(heapArrayMerger.java:55)
+	at sorters.InstructorTestFile.instructorTestInputFile(InstructorTestFile.java:183)
+	at sorters.InstructorTestFile.main(InstructorTestFile.java:262)
